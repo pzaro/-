@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "principle": "Readiness scoring is decision-support, not an approval rule.",
+  "domains": [
+    "regulatory",
+    "pico",
+    "clinical",
+    "safety",
+    "economic",
+    "budget",
+    "organizational",
+    "ethical_rwe"
+  ],
+  "weights": {
+    "regulatory": 0.1,
+    "pico": 0.1,
+    "clinical": 0.25,
+    "safety": 0.15,
+    "economic": 0.15,
+    "budget": 0.1,
+    "organizational": 0.1,
+    "ethical_rwe": 0.05
+  }
+}

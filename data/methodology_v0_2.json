@@ -1,0 +1,10 @@
+{
+  "version": "0.2",
+  "principles": [
+    "Every checkbox/select must be explainable",
+    "Every calculation must expose formula, variables, units and intermediate values",
+    "Readiness score is not a reimbursement recommendation",
+    "Clinical safety and safety-in-use are separate domains",
+    "Unmet need is contextual and does not substitute comparative evidence"
+  ]
+}
