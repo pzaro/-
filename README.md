@@ -1,59 +1,51 @@
 
-# MedTech HTA Evaluator v0.1
+# Greek MedTech HTA Workspace v0.3
 
-Πρωτότυπο web εφαρμογής για δομημένη αξιολόγηση ιατροτεχνολογικών προϊόντων ως HTA.
+Η v0.3 είναι guided, user-friendly εφαρμογή για structured MedTech HTA assessment.
 
-## Τι κάνει
-- Ταυτότητα τεχνολογίας
-- Regulatory readiness
-- PICO
-- Clinical effectiveness
-- Safety
-- Economic evaluation
-- Budget impact
-- Organizational impact
-- Ethical/social/legal + RWE
-- Red flags / evidence gaps
-- HTA summary
-- HTML report export
+## UX
+- αρχική οθόνη υποδοχής
+- sidebar wizard με βήματα
+- επεξήγηση κάθε κρίσιμου πεδίου
+- score anchors 0–5
+- source traceability σε inputs
+- step-by-step formulas
+- red flags και evidence gaps
+- ενσωματωμένος HTA Advisor
+
+## HTA Advisor
+### Χωρίς API key
+Λειτουργεί τοπικά με ενσωματωμένη methodological knowledge base.
+
+### Με LLM
+Ορίστε:
+```powershell
+$env:OPENAI_API_KEY="..."
+$env:OPENAI_MODEL="gpt-5.6-luna"
+streamlit run app.py
+```
+Το API key δεν αποθηκεύεται στον φάκελο της εφαρμογής.
+
+## Export
+Η τελική οθόνη δημιουργεί:
+- Word (.docx)
+- PDF
 
 ## Εκτέλεση
-1. Εγκατάσταση Python 3.11+
-2. Άνοιξε PowerShell μέσα στον φάκελο
-3. Τρέξε:
-   python -m venv .venv
-   .\.venv\Scripts\activate
-   pip install -r requirements.txt
-   streamlit run app.py
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-Στη συνέχεια ανοίγει στον browser.
-
-## Πρόσβαση από tablet στο ίδιο Wi‑Fi
-Τρέξε:
+## Πρόσβαση από tablet στο ίδιο δίκτυο
+```powershell
 streamlit run app.py --server.address 0.0.0.0
+```
+και στο tablet:
+`http://IP_ΥΠΟΛΟΓΙΣΤΗ:8501`
 
-και από το tablet άνοιξε:
-http://IP_ΤΟΥ_ΥΠΟΛΟΓΙΣΤΗ:8501
-
-## Σημαντική μεθοδολογική αρχή
-Το readiness score ΔΕΝ αποτελεί σύσταση αποζημίωσης.
-Η εφαρμογή διατηρεί χωριστά:
-- evidence
-- uncertainty
-- red flags
-- οικονομικές επιπτώσεις
-- αξιολογική κρίση
-
-Στην επόμενη έκδοση πρέπει να προστεθούν:
-- βιβλιογραφία και citations ανά claim
-- GRADE / risk-of-bias
-- SLR module
-- sensitivity / scenario analysis
-- probabilistic sensitivity analysis
-- comparator matrix
-- multi-PICO
-- versioning / audit log
-- user roles
-- database
-- PDF/DOCX HTA dossier export
-- ελληνικό HTA / EU JCA mapping
+## Σημαντικό
+Η εφαρμογή δεν είναι κρατικό σύστημα και δεν εκδίδει regulatory approval ή reimbursement decision.
+Το HTA readiness score είναι δείκτης πληρότητας/ωριμότητας, όχι πιθανότητα έγκρισης.
